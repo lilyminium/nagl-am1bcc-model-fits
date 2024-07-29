@@ -1,0 +1,5 @@
+*.sdf.gz
+
+# size reasons
+all-chembl.smi
+small-small-molecules.smi
