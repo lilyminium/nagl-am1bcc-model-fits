@@ -1,0 +1,9 @@
+# not actually used in any rc or recent models
+legacy/
+
+# big, already present in openff-nagl-models
+*.pt
+
+# too big
+*/checkpoints
+*.ckpt
