@@ -1,0 +1,4 @@
+atom_features:
+  - name: atomic_element
+    categories: ["C", "O", "H", "N", "S", "F", "Br", "Cl", "I", "P"]
+bond_features: []

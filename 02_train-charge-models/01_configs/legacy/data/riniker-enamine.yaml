@@ -1,0 +1,11 @@
+training-set-paths: 
+  - .../01_curate-data/04_labelled/output/relabelled-ChEMBL_eps_78.sqlite
+  - .../01_curate-data/04_labelled/output/relabelled-ZINC_eps_78.sqlite
+validation-set-paths:
+  - .../01_curate-data/04_labelled/output/relabelled-enamine-10240.sqlite
+test-set-paths:
+  - .../01_curate-data/04_labelled/output/relablled-OpenFF-Industry-Benchmark-Season-1-v1-1.sqlite
+training_batch_size: 1000
+validation_batch_size: 1000
+test_batch_size: 1000
+use_cached_data: True

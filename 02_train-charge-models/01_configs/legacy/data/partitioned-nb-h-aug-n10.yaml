@@ -1,0 +1,10 @@
+training-set-paths: 
+  - .../01_curate-data/05_partition-datasets/output/no-benchmark-n10-h-nci-aug-training.sqlite
+validation-set-paths:
+  - .../01_curate-data/05_partition-datasets/output/no-benchmark-n10-h-nci-aug-validation.sqlite
+test-set-paths:
+  - .../01_curate-data/04_labelled/output/relabelled-OpenFF-Industry-Benchmark-Season-1-v1-1.sqlite
+training_batch_size: 1000
+validation_batch_size: 1000
+test_batch_size: 1000
+use_cached_data: True

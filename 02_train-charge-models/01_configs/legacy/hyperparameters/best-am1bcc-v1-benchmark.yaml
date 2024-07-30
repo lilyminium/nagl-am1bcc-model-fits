@@ -1,0 +1,7 @@
+activation_function: Sigmoid
+convolution_architecture: SAGEConv
+learning_rate: 0.001
+n_convolution_hidden_features: 512
+n_convolution_layers: 6
+n_readout_hidden_features: 64
+n_readout_layers: 2

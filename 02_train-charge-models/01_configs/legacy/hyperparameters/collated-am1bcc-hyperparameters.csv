@@ -1,0 +1,6 @@
+,activation_function,convolution_architecture,learning_rate,n_convolution_hidden_features,n_convolution_layers,n_readout_hidden_features,n_readout_layers
+best-am1bcc-v1-benchmark,Sigmoid,SAGEConv,0.001,512,6,64,2
+best-am1bcc-v7-benchmark,Sigmoid,SAGEConv,0.001,512,5,256,1
+best-am1bcc-v5-benchmark,Sigmoid,SAGEConv,0.001,512,4,128,1
+best-am1bcc-v3,Sigmoid,SAGEConv,0.001,512,6,128,1
+best-am1bcc-v6-benchmark,Sigmoid,SAGEConv,0.001,512,6,128,2

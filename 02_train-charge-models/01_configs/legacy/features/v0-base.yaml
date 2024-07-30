@@ -1,0 +1,7 @@
+atom_features:
+  - AtomicElement:
+      categories: ["C", "O", "H", "N", "S", "F", "Br", "Cl", "I", "P"]
+  - AtomConnectivity
+  - AtomIsInRing
+bond_features:
+  - BondIsInRing

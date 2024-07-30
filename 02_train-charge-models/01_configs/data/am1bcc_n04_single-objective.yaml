@@ -1,0 +1,43 @@
+training:
+  cache_directory: .../02_train-charge-models/01_configs/cached-data
+  use_cached_data: True
+  batch_size: 500
+  sources:
+    - .../01_curate-data/05_partition-datasets/output/n04_training.arrow
+  targets:
+    - name: readout
+      denominator: 0.02
+      weight: 1
+      metric:
+        name: rmse
+      target_label: am1bcc_charges
+      prediction_label: am1bcc_charges
+validation:
+  cache_directory: .../02_train-charge-models/01_configs/cached-data
+  use_cached_data: True
+  batch_size: 500
+  sources:
+    - .../01_curate-data/05_partition-datasets/output/n04_validation.arrow
+  targets:
+    - name: readout
+      denominator: 0.02
+      weight: 2
+      metric:
+        name: rmse
+      target_label: am1bcc_charges
+      prediction_label: am1bcc_charges
+test:
+  cache_directory: .../02_train-charge-models/01_configs/cached-data
+  use_cached_data: True
+  batch_size: 500
+  sources:
+    - .../01_curate-data/04_labelled/output/openeye-benchmark.arrow
+    - .../01_curate-data/04_labelled/output/openeye-spice.arrow
+  targets:
+    - name: readout
+      denominator: 0.02
+      weight: 2
+      metric:
+        name: rmse
+      target_label: am1bcc_charges
+      prediction_label: am1bcc_charges

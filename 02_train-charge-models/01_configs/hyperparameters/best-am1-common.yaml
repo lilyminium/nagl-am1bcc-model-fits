@@ -1,0 +1,35 @@
+convolution:
+  architecture: SAGEConv
+  layers:
+    - hidden_feature_size: 512
+      activation_function: ReLU
+      dropout: 0
+      aggregator_type: mean
+    - hidden_feature_size: 512
+      activation_function: ReLU
+      dropout: 0
+      aggregator_type: mean
+    - hidden_feature_size: 512
+      activation_function: ReLU
+      dropout: 0
+      aggregator_type: mean
+    - hidden_feature_size: 512
+      activation_function: ReLU
+      dropout: 0
+      aggregator_type: mean
+    - hidden_feature_size: 512
+      activation_function: ReLU
+      dropout: 0
+      aggregator_type: mean
+    - hidden_feature_size: 512
+      activation_function: ReLU
+      dropout: 0
+      aggregator_type: mean
+readouts:
+  am1_charges:
+    pooling: atoms
+    postprocess: compute_partial_charges
+    layers:
+      - hidden_feature_size: 128
+        activation_function: Sigmoid
+        dropout: 0

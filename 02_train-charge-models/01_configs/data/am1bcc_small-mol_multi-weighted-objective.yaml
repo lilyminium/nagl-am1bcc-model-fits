@@ -1,0 +1,105 @@
+training:
+  cache_directory: .../02_train-charge-models/01_configs/cached-data
+  use_cached_data: True
+  batch_size: 500
+  lazy_loading: True
+  sources:
+    - .../01_curate-data/05_partition-datasets/output/all-chembl-small_training_renamed
+  targets:
+    - name: readout
+      denominator: 0.02
+      weight: 1
+      metric:
+        name: rmse
+      target_label: am1bcc_charges
+      prediction_label: am1bcc_charges
+    - name: multiple_dipoles
+      weight: 1
+      denominator: 0.1
+      metric:
+        name: rmse
+      target_label: am1bcc_dipoles
+      charge_label: am1bcc_charges
+      conformation_column: conformers
+      n_conformation_column: n_conformers
+    - name: multiple_esps
+      weight: 1
+      denominator: 0.001
+      metric:
+        name: weighted_rmse
+      target_label: am1bcc_esps
+      charge_label: am1bcc_charges
+      inverse_distance_matrix_column: esp_grid_inverse_distances
+      esp_length_column: esp_lengths
+      n_esp_column: n_conformers
+validation:
+  cache_directory: .../02_train-charge-models/01_configs/cached-data
+  use_cached_data: True
+  batch_size: 500
+  lazy_loading: True
+  sources:
+    - .../01_curate-data/05_partition-datasets/output/n04_validation
+  targets:
+    - name: readout
+      denominator: 0.02
+      weight: 1
+      metric:
+        name: rmse
+      target_label: am1bcc_charges
+      prediction_label: am1bcc_charges
+    - name: multiple_dipoles
+      weight: 1
+      denominator: 0.1
+      metric:
+        name: rmse
+      target_label: am1bcc_dipoles
+      charge_label: am1bcc_charges
+      conformation_column: conformers
+      n_conformation_column: n_conformers
+    - name: multiple_esps
+      weight: 1
+      denominator: 0.001
+      metric:
+        name: weighted_rmse
+      target_label: am1bcc_esps
+      charge_label: am1bcc_charges
+      inverse_distance_matrix_column: esp_grid_inverse_distances
+      esp_length_column: esp_lengths
+      n_esp_column: n_conformers
+test:
+  cache_directory: .../02_train-charge-models/01_configs/cached-data
+  use_cached_data: True
+  batch_size: 500
+  lazy_loading: True
+  sources:
+    - .../01_curate-data/04_labelled/output/openeye-benchmark
+    - .../01_curate-data/04_labelled/output/openeye-spice
+    - .../01_curate-data/04_labelled/output/openeye-ptms
+    - .../01_curate-data/05_partition-datasets/output/all-chembl-small_validation_renamed
+  targets:
+    - name: readout
+      denominator: 0.02
+      weight: 1
+      metric:
+        name: rmse
+      target_label: am1bcc_charges
+      prediction_label: am1bcc_charges
+    - name: multiple_dipoles
+      weight: 1
+      denominator: 0.1
+      metric:
+        name: rmse
+      target_label: am1bcc_dipoles
+      charge_label: am1bcc_charges
+      conformation_column: conformers
+      n_conformation_column: n_conformers
+    - name: multiple_esps
+      weight: 1
+      denominator: 0.001
+      metric:
+        name: weighted_rmse
+      target_label: am1bcc_esps
+      charge_label: am1bcc_charges
+      inverse_distance_matrix_column: esp_grid_inverse_distances
+      esp_length_column: esp_lengths
+      n_esp_column: n_conformers

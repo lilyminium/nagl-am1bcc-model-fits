@@ -1,0 +1,22 @@
+atom_features:
+  - name: atomic_element
+    categories: ["C", "O", "H", "N", "S", "F", "Br", "Cl", "I", "P"]
+  - name: atom_connectivity
+    categories: [1, 2, 3, 4, 5, 6]
+  - name: atom_average_formal_charge
+  - name: atom_in_ring_of_size
+    ring_size: 3
+  - name: atom_in_ring_of_size
+    ring_size: 4
+  - name: atom_in_ring_of_size
+    ring_size: 5
+  - name: atom_in_ring_of_size
+    ring_size: 6
+  - name: atom_in_ring_of_size
+    ring_size: 7
+  - name: atom_in_ring_of_size
+    ring_size: 8
+  - name: atom_total_bond_order
+  - name: atom_electronegativity_allred_rochow
+  - name: atom_electron_affinity
+bond_features: []
