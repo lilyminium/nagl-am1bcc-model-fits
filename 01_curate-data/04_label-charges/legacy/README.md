@@ -21,3 +21,24 @@ Environments are provided for both, where `openff-nagl-refactor` is the environm
 
 
 These are provided for clarity only; if reproducing this work it is highly recommended to use an input file to generate a new environment appropriate to your machine.
+
+
+## Table output format
+
+The expected table columns for training the model to different targets are all the columns listed in the data config files, i.e. the below. They are generated in the ``generate_conformers_and_label-pyarrow_both.py`` script, please see the code for examples.
+
+**ESPs**
+
+* `esp_grid_inverse_distances`: the inverse distance grid that forms Ax = b, where A is this grid; x is the charges; and b is the ESP. Expected to be inverse bohr.
+* `am1bcc_esps`: ESPs, in atomic units.
+* `esp_lengths`: as everything is flattened, the number of grid points/ESP evaluations, for each conformer
+* `n_conformers`: number of conformers in each observation
+
+**Dipoles**
+
+* `conformers`: the conformer geometries, expected to be angstrom
+* `am1bcc_dipoles`: dipoles, in Å•e (angstrom x elementary_charge)
+
+**Charges**
+
+* `am1bcc_charges`: charges in e.
