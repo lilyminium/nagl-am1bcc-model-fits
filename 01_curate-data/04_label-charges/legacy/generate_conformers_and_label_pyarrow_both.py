@@ -153,9 +153,9 @@ def batch_label(smiles_batch, ambertools=False, openeye=True):
 
     if openeye:
         schema_fields += [
-            pa.field("am1bcc_charges_openeye", pa.list_(pa.float32())),
-            pa.field("am1bcc_esps_openeye", pa.list_(pa.float32())),
-            pa.field("am1bcc_dipoles_openeye", pa.list_(pa.float32())),
+            pa.field("am1bcc_charges", pa.list_(pa.float32())),
+            pa.field("am1bcc_esps", pa.list_(pa.float32())),
+            pa.field("am1bcc_dipoles", pa.list_(pa.float32())),
         ]
     if ambertools:
         schema_fields += [
